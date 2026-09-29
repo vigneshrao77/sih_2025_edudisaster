@@ -73,28 +73,18 @@ const MainApp: React.FC = () => {
   }
 
   return (
-    <div className="bg-dark-900 min-h-screen font-sans text-dark-200 flex">
-      <div 
-        className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" 
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 25px 25px, rgba(0, 164, 228, 0.1) 2%, transparent 0%), 
-            radial-gradient(circle at 75px 75px, rgba(88, 101, 242, 0.1) 2%, transparent 0%)
-          `,
-          backgroundSize: '100px 100px'
-        }}
-      />
+    <div className="bg-dark-900 h-screen overflow-hidden font-sans text-dark-200 flex relative">
       <Sidebar 
         user={currentUser} 
         activeView={activeView} 
         setActiveView={setActiveView}
         onLogout={handleLogout}
       />
-      <div className="flex-1 flex flex-col min-w-0 z-10">
+      <div className="flex-1 flex flex-col h-screen min-w-0 z-10">
         <main className="flex-1 p-4 md:p-8 overflow-y-auto">
           {renderView()}
         </main>
-        <footer className="text-center p-4 text-dark-500 text-xs font-mono bg-dark-900 border-t border-dark-700">
+        <footer className="text-center p-4 text-dark-500 text-xs bg-dark-900 border-t border-dark-700">
           {t('app.footer')}
         </footer>
       </div>

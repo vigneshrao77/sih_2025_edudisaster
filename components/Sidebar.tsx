@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ user, activeView, setActiveView, onLo
   const availableViews = VIEW_PERMISSIONS[user.role] || [];
 
   return (
-    <aside className={`bg-dark-900/60 backdrop-blur-md border-r border-dark-700 flex flex-col h-screen sticky top-0 transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-64'}`}>
+    <aside className={`bg-dark-900/95 backdrop-blur-md border-r border-dark-700 flex flex-col h-screen sticky top-0 transition-all duration-300 ease-in-out z-50 ${isCollapsed ? 'w-20' : 'absolute md:relative w-64'}`}>
       <div className="flex items-center justify-center h-20 border-b border-dark-700 relative">
         <div className={`flex items-center transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>
            <ShieldIcon />
@@ -68,7 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({ user, activeView, setActiveView, onLo
           <button
             key={view}
             onClick={() => setActiveView(view)}
-            className={`w-full flex items-center px-4 py-3 rounded-lg text-left font-mono font-semibold transition-all duration-200 group relative ${isCollapsed ? 'justify-center' : ''} ${
+            className={`w-full flex items-center px-4 py-3 rounded-lg text-left font-semibold transition-all duration-200 group relative ${isCollapsed ? 'justify-center' : ''} ${
               activeView === view
                 ? 'bg-primary/20 text-light shadow-md'
                 : 'text-dark-300 hover:bg-dark-800 hover:text-light'

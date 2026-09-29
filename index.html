@@ -9,26 +9,11 @@
       name="description"
       content="EduDisaster: Personalized Disaster Preparedness Platform"
     />
-    <title>EduDisaster // Secure Shell</title>
+    <title>EduDisaster | Preparedness Platform</title>
     <style>
-      /* Add some global styles for the vibe */
       body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-      }
-      .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-effect 0.6s linear;
-        pointer-events: none;
-      }
-      @keyframes ripple-effect {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,25 +23,26 @@
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              mono: ['"Fira Code"', 'monospace'],
+              mono: ['"Outfit"', 'sans-serif'],
             },
             colors: {
-              primary: '#5865F2',   // Discord-like Violet
-              secondary: '#00A4E4', // Electric Blue
-              accent: '#23A55A',    // Emerald Green
-              danger: '#F04747',    // Red
-              light: '#EBEDF0',
+              primary: '#34765A',   // Forest Green (Primary buttons, safe status)
+              secondary: '#172B3A', // Deep Navy (Navigation, headers)
+              accent: '#E6A23C',    // Muted Orange (Warnings, alerts)
+              danger: '#C74747',    // Emergency Red (Critical alerts)
+              warning: '#E6A23C',
+              light: '#172B3A',     // Mapped to Deep Navy (formerly white text for headings)
               dark: {
-                DEFAULT: '#2D3748',
-                100: '#F7FAFC',
-                200: '#c9d1d9', // Light Text
-                300: '#CBD5E0',
-                400: '#A0AEC0',
-                500: '#718096',
-                600: '#4A5568',
-                700: '#30363d', // Borders
-                800: '#161b22', // Card BG
-                900: '#0d1117', // Main BG
+                DEFAULT: '#172B3A',
+                100: '#172B3A', // Deep Navy (Headings)
+                200: '#303A40', // Charcoal (Body text)
+                300: '#5C6B73', // Secondary text
+                400: '#8A969E', // Muted text
+                500: '#A4AFB5',
+                600: '#C4C8C5',
+                700: '#E2E2DC', // Borders
+                800: '#FFFFFF', // Card BG (Pure White)
+                900: '#F7F7F2', // Main BG (Warm White)
               },
             },
             animation: {
@@ -74,7 +60,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="importmap">
 {
   "imports": {
@@ -86,7 +72,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-dark-900 text-dark-200">
     <noscript>You need to enable JavaScript to run this app.</noscript>

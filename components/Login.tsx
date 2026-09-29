@@ -129,23 +129,17 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     }
   };
 
-  const customSelectStyles = "w-full p-3 border border-dark-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-dark-800 text-dark-200 appearance-none font-mono hover:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
-  const customInputStyles = "w-full p-3 pl-10 border border-dark-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-dark-800 text-dark-200 font-mono hover:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  const customSelectStyles = "w-full p-3 border border-dark-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-dark-800 text-dark-200 appearance-none hover:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  const customInputStyles = "w-full p-3 pl-10 border border-dark-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-dark-800 text-dark-200 hover:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
   return (
-    <div className="bg-dark-900 min-h-screen flex items-center justify-center p-4 font-sans" style={{
-          backgroundImage: `
-            radial-gradient(circle at 25px 25px, rgba(0, 164, 228, 0.1) 2%, transparent 0%), 
-            radial-gradient(circle at 75px 75px, rgba(88, 101, 242, 0.1) 2%, transparent 0%)
-          `,
-          backgroundSize: '100px 100px'
-        }}>
+    <div className="bg-dark-900 min-h-screen flex items-center justify-center p-4 font-sans">
       <Card className="max-w-md w-full !shadow-2xl !rounded-2xl !border-primary/20">
         <div className="flex flex-col items-center mb-6">
             <div className="p-3 bg-secondary/10 rounded-full mb-4">
                  <ShieldIcon />
             </div>
-            <h1 className="text-3xl font-bold text-light font-mono">{isRegistering ? t('login.createAccountTitle') : t('login.welcomeTitle')}</h1>
+            <h1 className="text-3xl font-bold text-light">{isRegistering ? t('login.createAccountTitle') : t('login.welcomeTitle')}</h1>
             <p className="text-dark-400 mt-1">{isRegistering ? t('login.createAccountSubtitle') : t('login.welcomeSubtitle')}</p>
         </div>
         
@@ -235,7 +229,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
              <div className="mt-6">
                 <div className="relative flex py-2 items-center">
                     <div className="flex-grow border-t border-dark-700"></div>
-                    <span className="flex-shrink mx-4 text-xs text-dark-500 font-mono">OR</span>
+                    <span className="flex-shrink mx-4 text-xs text-dark-500 font-semibold tracking-wider">OR</span>
                     <div className="flex-grow border-t border-dark-700"></div>
                 </div>
                 <Button onClick={handleGuestLogin} variant="secondary" className="w-full !py-3 !text-base">
@@ -245,7 +239,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         )}
 
         <div className="text-center mt-6">
-          <button onClick={() => { setIsRegistering(!isRegistering); setError(''); setSuccess(''); }} className="text-sm font-semibold text-primary hover:underline focus:outline-none font-mono">
+          <button onClick={() => { setIsRegistering(!isRegistering); setError(''); setSuccess(''); }} className="text-sm font-semibold text-primary hover:underline focus:outline-none">
             {isRegistering ? t('login.switchToLogin') : t('login.switchToRegister')}
           </button>
         </div>
